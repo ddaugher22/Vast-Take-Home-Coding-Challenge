@@ -1,6 +1,7 @@
 import argparse
 import random
 import datetime
+import sys
 import constants as const
 
 class MiningTruck():
@@ -258,6 +259,7 @@ def ParseArgs():
     parser.add_argument('-m', '--unloadStations', type=int, help='Number of unload stations', required=True)
     parser.add_argument('--logging', type=bool, help='Whether or not to log the mining truck tasks to a separate log file')
     args = parser.parse_args()
+    
     return args.numTrucks, args.unloadStations
 
 def DisplayStatistics(mining_trucks, unload_stations):
@@ -318,6 +320,12 @@ def RunSimulation(n, m):
             m (int): Number of unload stations in the simulation.
     """
 
+    # Verify that both the number of trucks and number of stations is greather than zero
+    if n < 1 or m < 1:
+        print("The number of mining trucks and unload stations must be greater than zero")
+        sys.exit()
+
+
     # Initialize instances of each mining truck/unload station and the task_queue
     task_queue = TaskQueue()
     mining_trucks = [MiningTruck(i+1, task_queue) for i in range(n)] # instantiating a MiningTruck adds a mining task to the task queue
@@ -352,7 +360,7 @@ def RunSimulation(n, m):
 
 if __name__ == '__main__':
     # Get number of mining trucks (n) and number of unload stations (m)
-    n, m = ParseArgs()
-   
+    n, m = ParseArgs() 
+    
     # Run the simulation with the desired number of trucks and stations
     RunSimulation(n, m)
