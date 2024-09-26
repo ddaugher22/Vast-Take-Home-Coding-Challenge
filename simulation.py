@@ -257,7 +257,6 @@ def ParseArgs():
     parser = argparse.ArgumentParser(description='Get number of mining trucks and unload station')
     parser.add_argument('-n', '--numTrucks', type=int, help='Number of mining trucks', required=True)
     parser.add_argument('-m', '--unloadStations', type=int, help='Number of unload stations', required=True)
-    parser.add_argument('--logging', type=bool, help='Whether or not to log the mining truck tasks to a separate log file')
     args = parser.parse_args()
     
     return args.numTrucks, args.unloadStations
