@@ -6,7 +6,7 @@ Develop a simulation for a lunar Helium-3 space mining operation. This simulatio
 ## Getting Started
 1. Clone the repository: ```git clone [repository_url]```
 2. Navigate to the project directory: ```cd Vast-Take-Home-Coding-Challenge```
-3. Make sure you have python3 installed - can check by running ```python3 --version```
+3. Verify python3 is installed - can check by running ```python3 --version```
 
 ## Usage
 You can run the simulation from the command line using the following command:
@@ -24,7 +24,10 @@ At the end of the simulation, you will see performance metrics for each truck an
 - Total time trucks waited at a specific station
 
 ## Run Tests
-Make sure to run pytest commands from top level folder
+Verify pytest is installed - ```pytest --version```.
+If not, run ```pip install pytest```.
+  
+Make sure to run pytest commands from top level folder.
 
 To run all test cases in the tests folder: ```pytest```
 To run all test cases in the tests folder with verbose output: ```pytest -v```
